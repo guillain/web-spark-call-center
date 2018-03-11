@@ -1,23 +1,8 @@
 version: "2"
 services:
   node:
-<<<<<<< HEAD
     build: .
     hostname: web-spark-call-center
     restart: always
     ports:
       - 8081:3333/tcp
-=======
-    image: "node:8"
-    user: "node"
-    working_dir: /app
-    environment:
-      - NODE_ENV=production
-    volumes:
-      - ./:/app
-    port:
-        8081:3333/tcp
-    expose:
-      - 8081
-    command: "httpster"
->>>>>>> 4fbcd28feb6a07ca0d9190360ad5e7cf4fc878ad

@@ -200,9 +200,15 @@ document.getElementById('start-share-screen').addEventListener('click', () => {
   }
 });
 
-document.getElementById('share-application').addEventListener('click', () => {
+document.getElementById('start-share-application').addEventListener('click', () => {
   if (activeCall) {
     activeCall.startApplicationShare();
+  }
+});
+
+document.getElementById('stop-share-application').addEventListener('click', () => {
+  if (activeCall) {
+    activeCall.stopApplicationShare();
   }
 });
 
