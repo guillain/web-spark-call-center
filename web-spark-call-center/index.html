@@ -1,16 +1,92 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Sample: Local Screensharing</title>
+    <title>Web - Collaboration tool</title>
   </head>
   <body>
-    <h1>Cisco Spark - Sample</h1>
-	<ul>
-		<li><a href="./samples/browser-single-party-call/index.html">browser-single-party-call</a></li>
-		<li><a href="./samples/browser-single-party-call-with-mute/index.html">browser-single-party-call-with-mute</a></li>
-		<li><a href="./samples/browser-multi-party-call/index.html">browser-multi-party-call</a></li>
-		<li><a href="./samples/browser-call-with-screenshare/index.html">browser-call-with-screenshare</a></li>
-		<li><a href="./samples/browser-auth-jwt/index.html">browser-auth-jwt</a></li>
-		<li><a href="./samples/browser-auth-implicit/index.html">browser-auth-implicit</a></li>
-	</ul>
+    <h1>Local Screensharing</h1>
+    <p>This sample demonstrates sharing your local screen</p>
+    <form id="credentials">
+      <fieldset>
+        <legend>Credentials</legend>
+        <input id="access-token" name="accessToken" placeholder="Your access token" type="text">
+		<input id="connect" title="connect" type="submit" value="connect">
+        <p id="connection-status">disconnected</p>
+      </fieldset>
+    </form>
+
+    <form id="dialer">
+      <fieldset>
+        <legend>Dialer</legend>
+        <input id="invitee" name="invitee" placeholder="Person ID or Email Address or SIP URI or Room ID" size="60" type="text">
+		<input title="dial" type="submit" value="dial">
+      </fieldset>
+    </form>
+
+    <form id="call-controls">
+      <fieldset>
+        <legend>Call Controls</legend>
+        <button id="hangup" title="hangup" type="button">cancel/hangup</button>
+
+		<button id="stop-sending-audio" title="stop sending audio" type="button">stop sending audio</button>
+        <button id="start-sending-audio" title="start sending audio" type="button">start sending audio</button>
+
+        <button id="stop-sending-video" title="stop sending video" type="button">stop sending video</button>
+        <button id="start-sending-video" title="start sending video" type="button">start sending video</button>
+		
+        <button id="stop-screen-share" title="stop screen share" type="button">stop screen share</button>
+        <button id="start-share-screen" title="start share screen" type="button">start share screen</button>
+		
+        <button id="share-application" title="share application" type="button">share application</button>
+      </fieldset>
+    </form>
+
+    <div style="align-items: flex-start; display: flex; max-width: 100%">
+      <div style="flex: 1 1 auto; width:60%">
+        <video style="" id="self-view" muted autoplay></video>
+        <video style="" id="self-screen" muted autoplay></video>
+      </div>
+      <div style="flex: 1 1 auto; width:40%" >
+        <audio id="remote-view-audio" autoplay></audio>
+        <video id="remote-view-video" autoplay></video>
+      </div>
+    </div>
+
+    <div style="align-items: flex-start; display: flex; max-width: 100%">
+      <div style="flex: 1 1 auto">
+        <video style="width:50%" id="self-view" muted autoplay></video>
+        <table>
+          <tbody>
+            <tr>
+              <td>camera state</td>
+              <td id="camera-state"></td>
+            </tr>
+            <tr>
+              <td>microphone state</td>
+              <td id="microphone-state"></td>
+            </tr>
+          </tbody>
+        </table>
+        <div style="display: flex">
+          <div>
+            <p>Outbound Audio Stats</p>
+            <pre id="outgoing-audio-stats"></pre>
+          </div>
+          <div>
+            <p>Outbound Video Stats</p>
+            <pre id="outgoing-video-stats"></pre>
+          </div>
+        </div>
+      </div>
+      <div style="flex: 1 1 auto; width:50%" >
+        <audio id="remote-view-audio" autoplay></audio>
+        <video id="remote-view-video" autoplay></video>
+      </div>
+    </div>
+	
+    <!-- /bundle.js is the bundled CiscoSpark JavaScript SDK -->
+    <script src="/bundle.js"></script>
+    <!-- app.js is your application code -->
+    <script src="app.js"></script>
+  </body>
 </html>
