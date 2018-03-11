@@ -1,13 +1,8 @@
 version: "2"
 services:
   node:
-    image: "node:8"
-    user: "node"
-    working_dir: /app
-    environment:
-      - NODE_ENV=production
-    volumes:
-      - ./:/app
-    expose:
+    build: .
+    hostname: web-spark-call-center
+    restart: always
+    ports:
       - 8081:3333/tcp
-    command: "httpster"
