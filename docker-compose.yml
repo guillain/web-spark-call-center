@@ -1,0 +1,22 @@
+# /!\:todo: public network must be reviewed befor EiS
+# howto:
+#   build: docker-compose build
+#   start: docker-compose up (-d to daemonize)
+#   build & start: docker-compose up --build
+#   stop : docker-compose down
+version: '2'
+
+services:
+
+  web-spark-call-center:
+    build: .
+    hostname: web-spark-call-center
+    restart: always
+    networks:
+      - public
+    ports:
+     - 8081:3333
+
+networks:
+    public:
+      driver: bridge

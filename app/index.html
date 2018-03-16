@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Web - Collaboration tool</title>
+    <link rel="stylesheet" href="app.css">
+</head>
+<body>
+    <h1>Local Screensharing</h1>
+    <p>Cisco Spark Audio / Video Communication tool - Web GUI</p>
+
+    <div class="div left top">
+        <form id="credentials">
+            <fieldset>
+                <legend>Credentials</legend>
+                <input id="access-token" name="accessToken" placeholder="Your access token" type="text"/>
+                <input id="connect" title="connect" type="submit" value="connect"/><p id="connection-status">disconnected</p>
+            </fieldset>
+        </form>
+    </div>
+
+    <div class="div right top">
+        <form id="dialer">
+            <fieldset>
+                <legend>Dialer</legend>
+                <input id="invitee" name="invitee" placeholder="Person ID or Email Address or SIP URI or Room ID" size="60" type="text"/><input title="dial" type="submit" value="dial"/>
+            </fieldset>
+        </form>
+    </div>
+
+    <div class="div left content">
+        <form id="call-controls">
+            <fieldset>
+                <legend>Local call</legend>
+                <div class="div center video">
+                    <video style="" id="self-view" muted autoplay></video>
+                    <video style="" id="self-screen" muted autoplay></video>
+                </div>
+                <div class="div center control">
+                    <input type="checkbox" name="icon-phone" id="icon-phone" />
+                    <label for="icon-phone" class="icon-phone-on control">
+                        <img class="icon" src="images/icon_phone_on.png" alt="Cancel" title="Cancel" />
+                    </label>
+                    <label for="icon-phone" class="icon-phone-off control">
+                        <img class="icon" src="images/icon_phone_off.png" alt="Hangup" title="Hangup" />
+                    </label>
+
+                    <input type="checkbox" name="icon-audio" id="icon-audio" />
+                    <label for="icon-audio" class="icon-audio-on control">
+                        <img class="icon" src="images/icon_micro_on.png" alt="Mute" title="Mute" />
+                    </label>
+                    <label for="icon-audio" class="icon-audio-off control">
+                        <img class="icon" src="images/icon_micro_off.png" alt="UnMute" title="Unmute" />
+                    </label>
+
+                    <input type="checkbox" name="icon-video" id="icon-video">
+                    <label for="icon-video" class="icon-video-on control">
+                        <img class="icon" src="images/icon_video_on.png" alt="Switch off the video" title="Switch off the video" />
+                    </label>
+                    <label for="icon-video" class="icon-video-off control">
+                        <img class="icon" src="images/icon_video_off.png" alt="Switch on the video" title="Switch on the video" />
+                    </label>
+
+                    <input type="checkbox" name="icon-screen" id="icon-screen">
+                    <label for="icon-screen" class="icon-screen-on control">
+                        <img class="icon" src="images/icon_screen_on.png" alt="Switch off the screen sharing" title="Switch off the screen sharing" />
+                    </label>
+                    <label for="icon-screen" class="icon-screen-off control">
+                        <img class="icon" src="images/icon_screen_off.png" alt="Switch on the screen sharing" title="Switch on the screen sharing" />
+                    </label>
+
+                    <input type="checkbox" name="icon-soft" id="icon-soft">
+                    <label for="icon-soft" class="icon-soft-on control">
+                        <img class="icon" src="images/icon_soft_on.png" alt="Switch off the application sharing" title="Switch off the application sharing" />
+                    </label>
+                    <label for="icon-soft" class="icon-soft-off control">
+                        <img class="icon" src="images/icon_soft_off.png" alt="Switch on the application sharing" title="Switch on the application sharing" />
+                    </label>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+
+    <div class="div right content">
+        <form id="remote-call">
+            <fieldset>
+                <legend>Remote call</legend>
+                <div class="div center video" >
+                    <audio id="remote-view-audio" autoplay></audio>
+                    <video id="remote-view-video" autoplay></video>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+
+    <!--div class="div bottom">
+        <div class="div left">
+            <table>
+                <tbody>
+                    <tr><td>camera state</td><td id="camera-state"></td></tr>
+                    <tr><td>microphone state</td><td id="microphone-state"></td></tr>
+                </tbody>
+            </table>
+            <div style="display: flex">
+                <div>
+                    <p>Outbound Audio Stats</p>
+                    <pre id="outgoing-audio-stats"></pre>
+                </div>
+                <div>
+                    <p>Outbound Video Stats</p>
+                    <pre id="outgoing-video-stats"></pre>
+                </div>
+            </div>
+        </div>
+        <div class="div right">
+            <audio id="remote-view-audio" autoplay></audio>
+            <video id="remote-view-video" autoplay></video>
+        </div>
+    </div-->
+
+    <script src="/bundle.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

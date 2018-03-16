@@ -1,0 +1,109 @@
+.div {
+    max-width: 100%;
+    flex: 1 1 auto;
+}
+
+.top {
+    height: 120px;
+}
+.content {
+    height: 300px;
+}
+.bottom {
+    height: 120px;
+}
+
+.left {
+    width:50%;
+    float:left;
+}
+.center {
+    align: center;
+    text-align: center;
+}
+.right {
+    width:50%;
+    float:right;
+}
+
+.video{
+    max-height: 500px;
+}
+.control{
+    margin: 10px;
+}
+
+.icon {
+    height: 64px;
+    width: 64px;
+}
+
+/* phone */
+input#icon-phone {
+  display: none;
+}
+.icon-phone-off img {
+  display: none;
+}
+input#icon-phone:checked ~ .icon-phone-off img {
+  display: initial;
+}
+input#icon-phone:checked ~ .icon-phone-on img {
+  display: none;
+}
+
+/* Audio */
+input#icon-audio {
+  display: none;
+}
+.icon-audio-off img {
+  display: none;
+}
+input#icon-audio:checked ~ .icon-audio-off img {
+  display: initial;
+}
+input#icon-audio:checked ~ .icon-audio-on img {
+  display: none;
+}
+
+/* Video */
+input#icon-video {
+  display: none;
+}
+.icon-video-off img {
+  display: none;
+}
+input#icon-video:checked ~ .icon-video-off img {
+  display: initial;
+}
+input#icon-video:checked ~ .icon-video-on img {
+  display: none;
+}
+
+/* Screen */
+input#icon-screen {
+  display: none;
+}
+.icon-screen-off img {
+  display: none;
+}
+input#icon-screen:checked ~ .icon-screen-off img {
+  display: initial;
+}
+input#icon-screen:checked ~ .icon-screen-on img {
+  display: none;
+}
+
+/* Soft */
+input#icon-soft {
+  display: none;
+}
+.icon-soft-off img {
+  display: none;
+}
+input#icon-soft:checked ~ .icon-soft-off img {
+  display: initial;
+}
+input#icon-soft:checked ~ .icon-soft-on img {
+  display: none;
+}
