@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # /!\:todo: public network must be reviewed befor EiS
 # howto:
 #   build: docker-compose build
@@ -12,11 +13,6 @@ services:
     build: .
     hostname: web-spark-call-center
     restart: always
-    networks:
-      - public
     ports:
      - 8081:3333
 
-networks:
-    public:
-      driver: bridge
