@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # /!\:todo: public network must be reviewed befor EiS
 # howto:
 #   build: docker-compose build
@@ -11,8 +10,10 @@ services:
 
   web-spark-call-center:
     build: .
+    image: web-spark-call-center:latest
+    container_name: web-spark-call-center
     hostname: web-spark-call-center
     restart: always
     ports:
-     - 8081:3333
+     - 9001:3333
 
